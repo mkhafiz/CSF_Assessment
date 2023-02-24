@@ -60,7 +60,7 @@ public class RestaurantRepository {
 	// You can add any parameters (if any)
 	// DO NOT CHNAGE THE METHOD'S NAME OR THE RETURN TYPE
 	// Write the Mongo native query above for this method
-	//
+	// Db.restaurant.find({"restaurantId":"xxxx"})
 	public Optional<Restaurant> getRestaurant(???) {
 		// Implmementation in here
 		

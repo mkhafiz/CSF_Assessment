@@ -1,1 +1,41 @@
-<p>restaurant-details works!</p>
+<table>
+    <tr>
+        <td>Name: </td>
+        <td>{{Restaurant.name}}</td>
+    </tr>
+    <tr>
+        <td>Cusisine: </td>
+        <td>{{Restaurant.cuisine}}</td>
+    </tr>
+    <tr>
+        <td>Address: </td>
+        <td>{{Restaurant.address}}</td>
+    </tr>
+    <form (ngSubmit)="processForm()">
+        <tr>
+            <td>Comment</td>
+        </tr>
+        <tr>
+            <td>Name: </td>
+            <td>
+                <input type="text" placeholder="Name" size="30" formControlName="name">
+        </tr>
+        <tr>
+      <td>Rating:</td>
+      <td> 
+        <input type="integer" placeholder="Rating" size="30" formControlName="rating">
+      </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" placeholder="Comment" size="90" formControlName="comment">
+        </td>
+    </tr>
+    <tr>
+        <td>
+          <button type="button" (click)="backPage()">Back</button>
+          <button type="button" (click)="addTask()">Submit</button>
+          </td>
+    </tr>
+    </form>
+</table>
