@@ -1,5 +1,6 @@
 package vttp2022.csf.assessment.server.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,16 +22,32 @@ public class RestaurantService {
 	// Use the following method to get a list of cuisines 
 	// You can add any parameters (if any) and the return type 
 	// DO NOT CHNAGE THE METHOD'S NAME
-	public ??? getCuisines(???) {
+	public List<Restaurant> getCuisines(???) {
 		// Implmementation in here
-		
+		List<Restaurant> list = new LinkedList<>();
+
+		while (rs.next()) {
+		FileData file = new FileData();
+		file.setCuisine(rs.getString("cuisine"));
+
+		for (String word: rs.split(“/”)) {
+			String w = word.trim();
+			if (w.contains(“-”))
+				notMatch.add(w.substring(1));
+			else
+				matches.add(w); 
+		}
+		list.add(file);
+		}
+		return list;
+
 	}
 
 	// TODO Task 3 
 	// Use the following method to get a list of restaurants by cuisine
 	// You can add any parameters (if any) and the return type 
 	// DO NOT CHNAGE THE METHOD'S NAME
-	public ??? getRestaurantsByCuisine(???) {
+	public String getRestaurantsByCuisine(String cuisine) {
 		// Implmementation in here
 		
 	}

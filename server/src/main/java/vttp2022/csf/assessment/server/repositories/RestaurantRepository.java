@@ -21,43 +21,24 @@ public class RestaurantRepository {
 	// You can add any parameters (if any) and the return type
 	// DO NOT CHNAGE THE METHOD'S NAME
 	// Write the Mongo native query above for this method
-
-	// db.restaurants.find	
+	// db.restaurant.find
 	public List<Restaurant> getCuisines() {
 		List<Restaurant> list = new LinkedList<>();
 
-		// final SqlRowSet rs = template.queryForRowSet(“select * from tv_shows limit ? offset ?”, limit, offset);
-		// while (rs.next()) {
-		// 	TVShow tv = new TVShow();
-		// 	tv.setProgramId(rs.getInt(“prog_id”);
-		// 	tv.setName(rs.getString(“name”));
-		// 	result.add(tv);
-		// 	}
-		// 	return (Collections.unmodifiableList(result)); -->
+		while (rs.next()) {
+		FileData file = new FileData();
+		file.setCuisine(rs.getString("cuisine"));
 
-// b) convert / to _
-		// for (String word: listOfWords.split(“,”)) {
-		// 	String w = word.trim();
-		// 	if (w.startsWith(“-”))
-		// 	notMatch.add(w.substring(1));
-		// 	else
-		// 	matches.add(w); -->
-
-		
-// 		List<FileData> opt = template.query(“select * from files where name like ?”,
-// params, (rs: ResultSet) -> {
-// List<FileData> list = new LinkedList<>();
-// while (rs.next()) {
-// FileData file = new FileData();
-// file.setName(rs.getString(“name”));
-// file.setContentType(rs.getString(“media_type”));
-// file.setContent(rs.getBytes(“content”));
-// list.add(file);
-// }
-// return list;
-// },
-
-
+		for (String word: rs.split(“/”)) {
+			String w = word.trim();
+			if (w.contains(“-”))
+				notMatch.add(w.substring(1));
+			else
+				matches.add(w); 
+		}
+		list.add(file);
+		}
+		return list;
 	}
 
 	// TODO Task 3
@@ -65,9 +46,12 @@ public class RestaurantRepository {
 	// You can add any parameters (if any) and the return type
 	// DO NOT CHNAGE THE METHOD'S NAME
 	// Write the Mongo native query above for this method
-	//
-	public ??? getRestaurantsByCuisine(???) {
+	// db.restaurant.find().sort({"title":-1})
+	public String getRestaurantsByCuisine(String cuisine) {
 		// Implmementation in here
+		ValueOperations<String, String> valueOp = redisTemplate.opsForValue();
+        String value = valueOp.get(Integer.toString(cuisine));
+        return value;
 
 	}
 

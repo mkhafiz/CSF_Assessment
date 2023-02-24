@@ -1,1 +1,13 @@
-<p>restaurant-cuisine works!</p>
+<table>
+    <thead>
+        <th>List of {{restaurant.cuisine}} Cuisines</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cuisine-list of Cuisine-list; ">
+            <td>{{restaurant.name}}</td>
+            <td>
+                <button type="button" (click)="backPage()">Back</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

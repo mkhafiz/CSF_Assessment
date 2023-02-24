@@ -9,5 +9,11 @@ export class RestaurantCuisineComponent {
 	
 	// TODO Task 3
 	// For View 2
+  GetSpecificCuisines(cusisine: any): string {
+    return Restaurant.cusisine;
+
+  backPage() {
+    
+  }
 
 }
