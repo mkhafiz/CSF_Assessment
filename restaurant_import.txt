@@ -1,1 +1,4 @@
 TODO: Task 1 - Write the mongo import command here
+
+Db.game.find
+mongoimport --db dbName --collection collectionName --file *\csf-assessment-template\restaurants.json fileName.json --jsonArray

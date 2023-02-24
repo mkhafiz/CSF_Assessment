@@ -9,5 +9,7 @@ export class CuisineListComponent {
 
 	// TODO Task 2
 	// For View 1
-
+GetCuisines():void {
+  
+}
 }
